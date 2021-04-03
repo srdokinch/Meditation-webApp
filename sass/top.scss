@@ -20,7 +20,6 @@
   flex-grow: 1;
 }
 .player-container {
-  background-color: green;
   position: relative;
   svg {
     position: absolute;
@@ -31,13 +30,55 @@
     pointer-events: none;
   }
 }
-.time-select {
-  background-color: pink;
-}
-.sound-picker {
-  background-color: skyblue;
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 50px;
 }
 
 video {
-  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -1;
+}
+
+.time-select, .sound-picker {
+  button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
+.sound-picker {
+  button {
+    border: none;
+    border-radius: 50%;
+    padding: 30px;
+    height: 120px;
+    width: 120px;
+    img {
+      height: 100%;
+    }
+  }
+  button:nth-child(1) {
+    background-color: #4972a1;
+  }
+  button:nth-child(2) {
+    background-color: #a14f49;
+  }
 }
