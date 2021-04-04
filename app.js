@@ -39,6 +39,7 @@ const app = () => {
     checkPlaying(song);
   });
 
+
   //creat a function specific to stop and play the sound
   const checkPlaying = function(song) {
     if(song.paused) {
@@ -76,6 +77,15 @@ const app = () => {
     };
   };
 
+  //以下が自分で改良するために書いたコード
+  //時間のボタンをクリックすると音楽が停止
+  timeSelect.forEach(option => {
+    option.addEventListener('click', function() {
+      song.pause();
+      play.src = './svg/play.svg';
+    });
+  });
 };
+
 
 app();
